@@ -1,0 +1,11 @@
+﻿@{
+    ViewData["Title"] = "Results";
+}
+@Html.Raw(ViewBag.Result)
+<hr />
+<form method="POST" action="followup">
+    <p>Ask a follow-up question:</p>
+    <input type="hidden" name="OriginalContent" value="@ViewBag.OriginalContent" />
+    <input type="text" class="form-control form-text" name="question" value="" />
+    <button class="btn btn-primary">Ask</button>
+</form>

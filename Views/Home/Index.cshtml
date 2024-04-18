@@ -1,0 +1,46 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Summarise with AI!</h1>
+    <p>
+        This is a demo application that will summarise a file, or some text into a single paragraph.
+        You can then ask follow up questions about the data you provided. Powered by OpenAI.
+    </p>
+</div>
+
+<div class="card mb-3">
+    <div class="card-header">
+        Summarise a URL
+    </div>
+    <div class="card-body">
+        <form method="POST" action="Home/SummariseUrl">
+            <input type="text" class="form-control form-text" name="URL" placeholder="https://example.com" />
+            <button class="btn btn-primary">Summarise Page!</button>
+        </form>
+    </div>
+</div>
+
+<div class="card mb-3">
+    <div class="card-header">
+        Summarise Text
+    </div>
+    <div class="card-body">
+        <form method="POST" action="Home/SummariseContent">
+            <textarea class="form-control" name="content" placeholder="Enter text to summarise here..."></textarea>
+            <button class="btn btn-primary">Summarise Text!</button>
+        </form>
+    </div>
+</div>
+<div class="card mb-3">
+    <div class="card-header">
+        Summarise PDF
+    </div>
+    <div class="card-body">
+        <form method="POST" action="Home/SummariseFile" enctype="multipart/form-data">
+            <input type="file" name="files" class="form-control" />
+            <button class="btn btn-primary">Summarise PDF!</button>
+        </form>
+    </div>
+</div>
